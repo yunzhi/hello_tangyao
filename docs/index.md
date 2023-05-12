@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# 引商刻羽，杂以流徵
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+这个是 允执 尝试用 mkdocs  创建的静态网页的源文件。
 
-## Project layout
+使用 netlify 服务将该静态页面部署起来。
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+未来内容包含一些文档和心得
+
+
+
+## 关于 允执
+
+一个弱爆了的嵌入式软件开发，从事行业十多年了，将将对嵌入式软件的开发有一点点理解，知道一点点汇编的知识，熟悉一点点RTOS的东西。
+
+喜欢足球，一个经常被虐的心碎的围棋爱好者
