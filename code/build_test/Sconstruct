@@ -1,0 +1,75 @@
+#coding=utf-8
+import os, sys
+
+env = Environment()
+# env = Environment(tools = ['mingw'])
+
+# 工程名
+env["project_name"] = "test"
+env["project_root"] = '.'
+
+# # 指定编译器
+env["PREFIX"] = ""
+# env["PREFIX"] = "arm-none-eabi-"
+
+env["CC"] = env["PREFIX"] + "gcc"
+# # env["CC"] = env["PREFIX"] + "gcc"
+env["AS"] = env["PREFIX"] + "gcc"
+# env["AR"] = env["PREFIX"] + "ar"
+# env["CXX"] = env["PREFIX"] + "g++"
+env["LINK"] = env["PREFIX"] + "gcc"
+# env["TARGET_EXT"] = env["PREFIX"] + "elf"
+# env["SIZE"] = env["PREFIX"] + "size"
+# env["OBJDUMP"] = env["PREFIX"] + "objdump"
+
+# env["OBJCPY"] = env["PREFIX"] + "objcopy"
+
+# # 指定编译参数
+# env.Append(CCFLAGS = ['-std=c99', '-Wall', '-g'])
+# # env['CCFLAGS'] = ['-std=c99', '-Wall', '-g']
+# # env['ASCOM'] = ''
+# # env['ASPPCOM'] = ''
+# # env['LINKFLAGS'] = ''
+
+# EXEC_PATH = r'C:/cygwin64/bin/' #r'/usr/bin'
+# env.PrependENVPath('PATH', EXEC_PATH)
+
+# windowsmlpath = r'C:\"Program Files (x86)"\"Microsoft Visual Studio"\2019\Community\VC\Tools\MSVC\14.27.29110\bin\Hostx64\x86'
+# env.PrependENVPath('PATH', windowsmlpath)
+
+# windows_crossbuild_path = r'D:\software\OneOSCube\components\mingw\bin'
+# env.PrependENVPath('PATH', windows_crossbuild_path)
+
+# windows_gcclib_path = r'C:\cygwin64\lib'
+# env.PrependENVPath('LIBPATH', windows_gcclib_path)
+
+
+
+# # 添加头文件路径
+# env.Append(CPPPATH = ['.'])
+
+# # 添加库路径
+# env["lib_path"] = r'C:\cygwin64\lib'
+# env.Append(LIBPATH = env["lib_path"])
+
+# # 指定链接库
+# #env["libs"] = ['print'] + ['hello']
+# env["libs"] = []
+
+# # 生成文件位置
+env['build_bin_root'] = ['#/build/bin/']
+# env['build_lib_root'] = ['#/build/lib/']
+
+#Export 和子目录的Import对应，是为了传递env变量
+Export('env')
+
+objs = []
+
+#顶层SConscript, variant_dir为空
+objs += SConscript("SConscript", variant_dir='', duplicate=0)
+
+# print(env.Dump())
+
+# 构建可执行文件
+bin = env.Program(target = env["project_name"], source  = objs)
+# env.Install(env["build_bin_root"], bin)

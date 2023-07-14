@@ -1,0 +1,15 @@
+import os
+
+Import('env')
+env = env.Clone()
+
+pwd     = os.getcwd()
+src     = Glob('*.c')
+
+env.Append(CPPPATH = [pwd])
+
+# group = Library('cjson', src)  #将文件编译成不依赖项目编译参数的库
+# group = env.Library('cjson', src) #依赖项目编译参数的库
+group = env.Object(src)
+
+Return('group')

@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "SConscript": "python",
+        "SConstruct": "python",
+        "Kconfig": "kconfig",
+        "*.S": "c",
+        "*.map": "arm",
+        "onenet_project_info.h": "c"
+    }
+}

@@ -2,6 +2,8 @@ site_name: 引商刻羽，杂以流徵
 
 nav:
   - 首页: "index.md"
+  - 事:
+    - 我的开发技巧: "我的常用开发技巧.md"
   - 器:   "mkdocs的使用.md"
 
 theme:

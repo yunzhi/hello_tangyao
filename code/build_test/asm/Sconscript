@@ -1,0 +1,15 @@
+import os, sys
+Import('env')
+
+env = env.Clone()
+
+# env = Environment(tools = ['mingw'])
+# env["AS"] = env["PREFIX"] + "gcc"
+
+objs = []
+
+src = Glob("*.S") + Glob("*.c")
+
+objs = env.Object(src)
+
+Return('objs')
