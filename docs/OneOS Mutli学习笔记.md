@@ -656,3 +656,22 @@ ID      Name                    State             Assigned CPUs           Failed
 1       ok3568-rtos             running           2-3 
 ```
 
+
+
+
+
+看 rk3568 (arm64 架构)编译出来的 oneos.map ，我们看到
+
+```
+                0xffff000000208000                . = 0xffff000000208000
+
+.text           0xffff000000208000    0xf5608 load address 0x0000000010208000
+                0xffff000000208000                __code_start = .
+                0xffff000000208000                _stext = .
+ *(.text.boot)
+ .text.boot     0xffff000000208000      0x3e8 build/arch/arm/arm64/source/start.o
+                0xffff000000208000                arm_reset
+                0xffff000000208000                _start
+```
+
+符号表的地址都是 48 位的
